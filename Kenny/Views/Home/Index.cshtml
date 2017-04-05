@@ -1,4 +1,9 @@
-﻿@*@section Scripts{
-    @Scripts.Render("~/bundles/knockout")
-    @Scripts.Render("~/bundles/app")
-}*@
+﻿<div class="blog mdl-layout mdl-js-layout has-drawer is-upgraded">
+    <main class="mdl-layout__content">
+        <div class="blog__posts mdl-grid">
+            @Html.Partial("~/Views/Home/Partial/CardImage.cshtml", "Test")
+            @Html.Partial("~/Views/Home/Partial/CardQuote.cshtml", "Test")
+        </div>
+    </main>
+    <div class="mdl-layout__obfuscator"></div>
+</div>

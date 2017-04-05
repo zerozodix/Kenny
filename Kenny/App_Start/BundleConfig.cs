@@ -1,25 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
 namespace Kenny
 {
     public class BundleConfig
     {
-        // For more information on bundling, visit https://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
-            //bundles.Add(new ScriptBundle("~/bundles/knockout").Include(
-            //    "~/Scripts/knockout-{version}.js",
-            //    "~/Scripts/knockout.validation.js"));
+            AddJavaScriptLibraries(bundles);
+            AddStyleSheetLibraries(bundles);
+        }
 
-            // Use the development version of Modernizr to develop with and learn from. Then, when you're
-            // ready for production, use the build tool at https://modernizr.com to pick only the tests you need.
+        private static void AddJavaScriptLibraries(BundleCollection bundles)
+        {
+            bundles.Add(new ScriptBundle("~/Scripts/MDL").Include(
+                "~/Scripts/Plugins/MDL/material.min.js"));
+        }
 
-            //bundles.Add(new StyleBundle("~/Content/css").Include(
-            //     "~/Content/bootstrap.css",
-            //     "~/Content/Site.css"));
+        private static void AddStyleSheetLibraries(BundleCollection bundles)
+        {
+            bundles.Add(new StyleBundle("~/Content/App").Include(
+                "~/Content/App/animation.css",
+                 "~/Content/Plugins/MDL/styles.css",
+                "~/Content/Plugins/MDL/material.grey-orange.min.css"));
         }
     }
 }
